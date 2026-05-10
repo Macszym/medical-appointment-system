@@ -1,0 +1,424 @@
+/**
+ * Style dla komponentu WeekCalendar
+ * Inspirowane kalendarzem Google - widok tygodniowy
+ */
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* ============================================
+   NAGŁÓWEK KALENDARZA
+   ============================================ */
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #202124;
+}
+
+.navigation-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-button {
+  padding: 8px 16px;
+  background: #fff;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #5f6368;
+  transition: all 0.2s;
+}
+
+.nav-button:hover {
+  background: #f1f3f4;
+  border-color: #5f6368;
+}
+
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.today-button {
+  background: #1a73e8;
+  color: #fff;
+  border-color: #1a73e8;
+}
+
+.today-button:hover {
+  background: #1765cc;
+}
+
+/* ============================================
+   SIATKA KALENDARZA
+   ============================================ */
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: 80px repeat(7, 1fr);
+  flex: 1;
+  overflow: auto;
+}
+
+/* Kolumna z godzinami (lewa) */
+.time-column {
+  background: #f8f9fa;
+  border-right: 1px solid #dadce0;
+  display: flex;
+  flex-direction: column;
+}
+
+.time-header {
+  height: 60px;
+  border-bottom: 1px solid #dadce0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  color: #5f6368;
+}
+
+.time-slot {
+  height: 50px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 4px;
+  font-size: 12px;
+  color: #70757a;
+}
+
+/* ============================================
+   KOLUMNA DNIA
+   ============================================ */
+
+.day-column {
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+}
+
+.day-column:last-child {
+  border-right: none;
+}
+
+.day-column.today {
+  background: #e8f0fe;
+}
+
+.day-column.absence {
+  background: repeating-linear-gradient(
+    45deg,
+    #ffe5e5,
+    #ffe5e5 10px,
+    #ffd6d6 10px,
+    #ffd6d6 20px
+  );
+}
+
+.day-column.absence .day-header {
+  background: #ff5252 !important;
+  color: #fff !important;
+}
+
+.day-column.absence .day-name,
+.day-column.absence .day-date,
+.day-column.absence .day-appointments-count {
+  color: #fff !important;
+}
+
+.day-column.absence .day-header::after {
+  content: 'URLOP';
+  display: block;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 1px;
+  opacity: 0.9;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* Nagłówek kolumny dnia */
+.day-header {
+  height: 75px;
+  border-bottom: 2px solid #dadce0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 4px;
+  background: #fff;
+}
+
+.day-column.today .day-header {
+  background: #1a73e8;
+  color: #fff;
+}
+
+.day-name {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: #70757a;
+  margin-bottom: 2px;
+}
+
+.day-column.today .day-name {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.day-date {
+  font-size: 22px;
+  font-weight: 600;
+  color: #202124;
+  line-height: 1;
+}
+
+.day-column.today .day-date {
+  color: #fff;
+}
+
+.day-appointments-count {
+  font-size: 9px;
+  color: #70757a;
+  margin-top: 2px;
+  line-height: 1;
+}
+
+.day-column.today .day-appointments-count {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Komórki ze slotami */
+.day-slots {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   SLOT CZASOWY (30 minut)
+   ============================================ */
+
+.slot-cell {
+  height: 50px;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.slot-cell:hover {
+  background: #f8f9fa;
+}
+
+.slot-cell.unavailable {
+  background: #fafafa;
+  cursor: not-allowed;
+}
+
+.slot-cell.unavailable:hover {
+  background: #fafafa;
+}
+
+/* Wizyta w slocie */
+.appointment-block {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.appointment-block:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Typy wizyt - kolory */
+.appointment-block.first_visit {
+  background: #e3f2fd;
+  border-left: 3px solid #1976d2;
+  color: #0d47a1;
+}
+
+.appointment-block.follow_up {
+  background: #f3e5f5;
+  border-left: 3px solid #7b1fa2;
+  color: #4a148c;
+}
+
+.appointment-block.chronic_disease {
+  background: #fff3e0;
+  border-left: 3px solid #f57c00;
+  color: #e65100;
+}
+
+.appointment-block.prescription {
+  background: #e8f5e9;
+  border-left: 3px solid #388e3c;
+  color: #1b5e20;
+}
+
+.appointment-block.consultation {
+  background: #fce4ec;
+  border-left: 3px solid #c2185b;
+  color: #880e4f;
+}
+
+.appointment-block.emergency {
+  background: #ffebee;
+  border-left: 3px solid #d32f2f;
+  color: #b71c1c;
+}
+
+/* Wizyta zakończona (przeszłość) */
+.appointment-block.past {
+  opacity: 0.5;
+  filter: grayscale(50%);
+}
+
+/* Wizyta anulowana */
+.appointment-block.cancelled {
+  background: #f5f5f5;
+  border-left: 3px solid #9e9e9e;
+  color: #616161;
+  text-decoration: line-through;
+}
+
+/* Slot zajęty przez innego użytkownika */
+.appointment-block.occupied {
+  background: #e0e0e0;
+  border-left: 3px solid #757575;
+  color: #424242;
+  cursor: default;
+}
+
+.appointment-block.occupied:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transform: none;
+}
+
+.appointment-time {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.appointment-patient {
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+/* ============================================
+   ZNACZNIK AKTUALNEGO CZASU
+   ============================================ */
+
+.current-time-indicator {
+  position: absolute;
+  left: 80px;
+  right: 0;
+  height: 2px;
+  background: #ea4335;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.current-time-indicator::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: -4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ea4335;
+}
+
+/* ============================================
+   ŁADOWANIE
+   ============================================ */
+
+.loading-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  color: #5f6368;
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #1a73e8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ============================================
+   RESPONSYWNOŚĆ
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .calendar-grid {
+    grid-template-columns: 60px repeat(7, 1fr);
+  }
+
+  .day-date {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .header-title {
+    font-size: 18px;
+  }
+
+  .day-name {
+    font-size: 10px;
+  }
+
+  .day-date {
+    font-size: 16px;
+  }
+}

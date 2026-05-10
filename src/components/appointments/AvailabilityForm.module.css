@@ -1,0 +1,275 @@
+/**
+ * Style dla formularza dostępności
+ */
+
+.form {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #202124;
+  margin-bottom: 24px;
+}
+
+/* Zakładki (tabs) */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px 24px;
+  background: #f8f9fa;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #5f6368;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  background: #f1f3f4;
+}
+
+.tab.active {
+  background: #1a73e8;
+  color: #fff;
+  border-color: #1a73e8;
+}
+
+/* Grupa formularza */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #202124;
+  margin-bottom: 8px;
+}
+
+.label-with-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+/* Wiersz z dwoma polami */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Wybór dni tygodnia */
+.day-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+}
+
+.day-button {
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border: 2px solid #dadce0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #5f6368;
+  transition: all 0.2s;
+}
+
+.day-button:hover {
+  background: #f1f3f4;
+  border-color: #5f6368;
+}
+
+.day-button.selected {
+  background: #e8f0fe;
+  border-color: #1a73e8;
+  color: #1a73e8;
+  font-weight: 600;
+}
+
+/* Zakresy czasowe */
+.time-ranges {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.time-range {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.time-input {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+}
+
+.time-input:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.separator {
+  color: #5f6368;
+  font-weight: 500;
+}
+
+.add-button {
+  padding: 6px 12px;
+  background: #fff;
+  border: 1px solid #1a73e8;
+  border-radius: 4px;
+  color: #1a73e8;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-button:hover {
+  background: #e8f0fe;
+}
+
+.remove-button {
+  padding: 8px 12px;
+  background: #fff;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  color: #d32f2f;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.remove-button:hover {
+  background: #ffebee;
+  border-color: #d32f2f;
+}
+
+/* Błąd */
+.error {
+  padding: 12px 16px;
+  background: #ffebee;
+  border-left: 3px solid #d32f2f;
+  border-radius: 4px;
+  color: #c62828;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Akcje (przyciski) */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button-primary {
+  background: #1a73e8;
+  color: #fff;
+}
+
+.button-primary:hover:not(:disabled) {
+  background: #1765cc;
+}
+
+.button-secondary {
+  background: #fff;
+  color: #5f6368;
+  border: 1px solid #dadce0;
+}
+
+.button-secondary:hover:not(:disabled) {
+  background: #f1f3f4;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .form {
+    padding: 16px;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .day-picker {
+    grid-template-columns: 1fr;
+  }
+
+  .time-range {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+}

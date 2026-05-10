@@ -1,0 +1,138 @@
+/**
+ * Style dla nawigacji
+ */
+
+.nav {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a73e8;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo:hover {
+  color: #1765cc;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.link {
+  color: #5f6368;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.link:hover {
+  background: #f1f3f4;
+  color: #202124;
+}
+
+.link-button {
+  color: #fff;
+  background: #1a73e8;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.link-button:hover {
+  background: #1765cc;
+}
+
+.badge {
+  background: #d32f2f;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+  background: #f8f9fa;
+  border-radius: 24px;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 500;
+  color: #202124;
+}
+
+.logout-button {
+  background: none;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #5f6368;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logout-button:hover {
+  background: #f1f3f4;
+  border-color: #5f6368;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .menu {
+    gap: 12px;
+  }
+
+  .link {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .username {
+    display: none;
+  }
+}

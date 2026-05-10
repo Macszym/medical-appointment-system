@@ -1,0 +1,54 @@
+/**
+ * Style dla layoutu głównego
+ */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.main {
+  flex: 1;
+  padding: 32px 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.footer {
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+  padding: 24px 0;
+  margin-top: 48px;
+}
+
+.footer .container {
+  text-align: center;
+}
+
+.footer p {
+  margin: 4px 0;
+  color: #5f6368;
+  font-size: 14px;
+}
+
+.footer-note {
+  font-size: 12px !important;
+  color: #9aa0a6 !important;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .main {
+    padding: 16px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+}

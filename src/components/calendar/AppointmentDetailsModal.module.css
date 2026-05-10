@@ -1,0 +1,287 @@
+/**
+ * Style dla modalu ze szczegółami wizyty
+ */
+
+/* Tło modalu */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* Okno modalu */
+.modal {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nagłówek */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #f8f9fa;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #202124;
+  margin: 0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #5f6368;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.close-button:hover {
+  color: #202124;
+}
+
+/* Treść */
+.content {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.section {
+  margin-bottom: 24px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #5f6368;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-size: 14px;
+  color: #5f6368;
+  font-weight: 500;
+}
+
+.value {
+  font-size: 14px;
+  color: #202124;
+  font-weight: 400;
+}
+
+/* Badge (etykiety statusu i typu) */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Typy wizyt */
+.badge.first_visit {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+
+.badge.follow_up {
+  background: #f3e5f5;
+  color: #4a148c;
+}
+
+.badge.chronic_disease {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.badge.prescription {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+.badge.consultation {
+  background: #fce4ec;
+  color: #880e4f;
+}
+
+.badge.emergency {
+  background: #ffebee;
+  color: #b71c1c;
+}
+
+/* Statusy */
+.badge.available {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.badge.reserved {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.badge.confirmed {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.badge.completed {
+  background: #f5f5f5;
+  color: #616161;
+}
+
+.badge.cancelled {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.badge.no_show {
+  background: #fce4ec;
+  color: #c2185b;
+}
+
+/* Notatki */
+.notes {
+  background: #f8f9fa;
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #202124;
+  border-left: 3px solid #1a73e8;
+}
+
+/* Załączniki */
+.attachments {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.attachment {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #1a73e8;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.attachment:hover {
+  background: #e8f0fe;
+}
+
+/* Akcje (stopka) */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid #e0e0e0;
+  background: #f8f9fa;
+}
+
+.button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button-primary {
+  background: #1a73e8;
+  color: #fff;
+}
+
+.button-primary:hover {
+  background: #1765cc;
+}
+
+.button-secondary {
+  background: #fff;
+  color: #5f6368;
+  border: 1px solid #dadce0;
+}
+
+.button-secondary:hover {
+  background: #f1f3f4;
+}
+
+.button-danger {
+  background: #d32f2f;
+  color: #fff;
+}
+
+.button-danger:hover {
+  background: #c62828;
+}
+
+/* Responsywność */
+@media (max-width: 640px) {
+  .modal {
+    max-width: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+}

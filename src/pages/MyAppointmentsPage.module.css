@@ -1,0 +1,246 @@
+/**
+ * Style dla strony wizyt pacjenta
+ */
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #202124;
+  margin: 0 0 8px 0;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #5f6368;
+  margin: 0;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: #5f6368;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #1a73e8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pusty stan */
+.empty {
+  text-align: center;
+  padding: 64px 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 24px;
+}
+
+.empty h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #202124;
+  margin: 0 0 12px 0;
+}
+
+.empty p {
+  font-size: 16px;
+  color: #5f6368;
+  margin: 0;
+}
+
+/* Sekcja */
+.section {
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #202124;
+  margin: 0 0 16px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* Lista wizyt */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  transition: all 0.2s;
+  border-left: 4px solid #1a73e8;
+}
+
+.item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.item.past {
+  opacity: 0.7;
+  border-left-color: #9aa0a6;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+/* Status */
+.status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-right: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-reserved {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.status-confirmed {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-cancelled {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.status-completed {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.item-type {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #f1f3f4;
+  color: #5f6368;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Przycisk anulowania */
+.button-cancel {
+  padding: 8px 20px;
+  background: transparent;
+  color: #d32f2f;
+  border: 1px solid #d32f2f;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.button-cancel:hover {
+  background: #d32f2f;
+  color: white;
+}
+
+/* Szczegóły wizyty */
+.item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.item-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-label {
+  font-size: 14px;
+  color: #5f6368;
+  font-weight: 500;
+}
+
+.detail-value {
+  font-size: 16px;
+  color: #202124;
+  font-weight: 500;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .page {
+    padding: 16px;
+  }
+
+  .item-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .button-cancel {
+    width: 100%;
+  }
+
+  .item-detail {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .status,
+  .item-type {
+    display: block;
+    margin-bottom: 8px;
+  }
+}

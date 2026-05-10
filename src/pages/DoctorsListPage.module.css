@@ -1,0 +1,228 @@
+/**
+ * Style dla strony listy lekarzy
+ */
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #202124;
+  margin: 0 0 8px 0;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #5f6368;
+  margin: 0;
+}
+
+.search {
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #dadce0;
+  border-radius: 24px;
+  font-size: 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 2px 8px rgba(26, 115, 232, 0.2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #dadce0;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.info {
+  flex: 1;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #202124;
+  margin: 0 0 4px 0;
+}
+
+.specialization {
+  font-size: 14px;
+  color: #1a73e8;
+  margin: 0;
+  font-weight: 500;
+}
+
+.card-body {
+  padding: 16px 20px;
+}
+
+.email {
+  font-size: 14px;
+  color: #5f6368;
+  margin: 0;
+}
+
+.card-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #f1f3f4;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.button-primary {
+  display: block;
+  width: 100%;
+  padding: 12px 24px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button-primary:hover {
+  background: #1557b0;
+}
+
+.button-secondary {
+  display: block;
+  width: 100%;
+  padding: 12px 24px;
+  background: #f8f9fa;
+  color: #333;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button-secondary:hover {
+  background: #e9ecef;
+  border-color: #adb5bd;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.empty {
+  text-align: center;
+  padding: 64px 24px;
+  color: #5f6368;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: #5f6368;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #1a73e8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
